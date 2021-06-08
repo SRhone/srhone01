@@ -1,0 +1,11 @@
+{
+  "physicalTableAlias" : {
+    "name" : "D1 Time",
+    "sourceTable" : "physicalTable:MyDatabase.BISAMPLE.SAMP_TIME_DAY_D",
+    "caching" : {
+      "enable" : false,
+      "expiryTime" : 0
+    },
+    "overrideSourceCacheSetting" : false
+  }
+}

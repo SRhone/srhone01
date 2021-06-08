@@ -1,0 +1,11 @@
+{
+  "physicalTableAlias" : {
+    "name" : "D2 Product",
+    "sourceTable" : "physicalTable:MyDatabase.BISAMPLE.SAMP_PRODUCTS_D",
+    "caching" : {
+      "enable" : false,
+      "expiryTime" : 0
+    },
+    "overrideSourceCacheSetting" : false
+  }
+}

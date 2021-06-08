@@ -1,0 +1,72 @@
+{
+  "database" : {
+    "name" : "MyDatabase",
+    "databaseType" : "ORACLE_12C",
+    "connectionPools" : [ {
+      "name" : "New Connection Pool_1",
+      "connection" : "'semanticmodel'.'BISAMPLE'",
+      "maxConnections" : 10,
+      "requiresFullyQualifedTableNames" : false,
+      "connectionTimeout" : 5,
+      "connectionTimeoutUnit" : "MINUTES",
+      "multithreaded" : true,
+      "supportParams" : true,
+      "isolationLevel" : "default",
+      "writeBackConfig" : {
+        "dbSupportsUnicode" : false,
+        "bulkInsertBufferSize" : 10240,
+        "transactionBoundary" : 1000,
+        "tempTablePrefix" : "TT"
+      }
+    } ],
+    "virtualPrivateDatabase" : false,
+    "crmMetadataTables" : false,
+    "allowDirectDatabaseRequests" : false,
+    "allowPopulateQueries" : false,
+    "joins" : [ {
+      "name" : "NewJoin_1",
+      "leftTable" : "physicalTableAlias:MyDatabase.BISAMPLE.F1 Revenue",
+      "rightTable" : "physicalTableAlias:MyDatabase.BISAMPLE.D1 Time",
+      "useJoinExpression" : false,
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_REVENUE_F.BILL_DAY_DT",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_TIME_DAY_D.CALENDAR_DATE"
+      } ]
+    }, {
+      "name" : "NewJoin_2",
+      "leftTable" : "physicalTableAlias:MyDatabase.BISAMPLE.F1 Revenue",
+      "rightTable" : "physicalTableAlias:MyDatabase.BISAMPLE.D2 Product",
+      "useJoinExpression" : false,
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_REVENUE_F.PROD_KEY",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_PRODUCTS_D.PROD_KEY"
+      } ]
+    }, {
+      "name" : "NewJoin_3",
+      "leftTable" : "physicalTableAlias:MyDatabase.BISAMPLE.F1 Revenue",
+      "rightTable" : "physicalTableAlias:MyDatabase.BISAMPLE.D3 Customer",
+      "useJoinExpression" : false,
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_REVENUE_F.CUST_KEY",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_CUSTOMERS_D.CUST_KEY"
+      } ]
+    }, {
+      "name" : "NewJoin_4",
+      "leftTable" : "physicalTableAlias:MyDatabase.BISAMPLE.D3 Customer",
+      "rightTable" : "physicalTableAlias:MyDatabase.BISAMPLE.D4 Address",
+      "useJoinExpression" : false,
+      "joinType" : "INNER",
+      "cardinality" : "MANY_TO_ONE",
+      "joinConditions" : [ {
+        "leftColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_CUSTOMERS_D.ADDRESS_KEY",
+        "rightColumn" : "physicalColumn:MyDatabase.BISAMPLE.SAMP_ADDRESSES_D.ADDRESS_KEY"
+      } ]
+    } ]
+  }
+}

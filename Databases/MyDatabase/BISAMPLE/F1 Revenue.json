@@ -1,0 +1,11 @@
+{
+  "physicalTableAlias" : {
+    "name" : "F1 Revenue",
+    "sourceTable" : "physicalTable:MyDatabase.BISAMPLE.SAMP_REVENUE_F",
+    "caching" : {
+      "enable" : false,
+      "expiryTime" : 0
+    },
+    "overrideSourceCacheSetting" : false
+  }
+}
